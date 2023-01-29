@@ -14,6 +14,8 @@ import MuiAlert from '@mui/material/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfo } from '@fortawesome/free-solid-svg-icons';
 
+import { Currency } from "react-intl-number-format"
+
 import { listSymbols, convertCurrency } from '../api/CurrencyConvertAPI';
 
 export default function CurrencyConvert() {
@@ -97,7 +99,9 @@ export default function CurrencyConvert() {
     if (result) {
         resultComponent = 
             <Grid item xs={12}>
-                <Button variant="outlined">Converted value : {result}</Button>
+                <Button variant="outlined">
+                    Converted value :‏<Currency currency={target}>{result}</Currency>
+                </Button>
             </Grid>;
     }
 
