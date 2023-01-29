@@ -1,6 +1,11 @@
 import axios from 'axios';
 import { baseURL } from './Configs';
 
+/**
+ * Call list symbols endpoint.
+ * 
+ * @returns API response for /symbols endpoint
+ */
 export const listSymbols = async () => {
 
     const response = await axios.get(baseURL + "/symbols");
@@ -8,32 +13,19 @@ export const listSymbols = async () => {
     return response;
 };
 
-// export const checkUploadStatusAPI = async (identifier) => {
+/**
+ * Call convert endpoint.
+ * 
+ * @param {*} source The source currency
+ * @param {*} target The target currency
+ * @param {*} value Value to convert
+ * @returns API response for conversion
+ */
+export const convertCurrency = async (source, target, value) => {
 
-//     const params = new URLSearchParams([['identifier', identifier]]);
+    const params = new URLSearchParams([['base', source], ['target', target], ['value', value]]);
 
-//     const response = await axios.get(reconAPIBaseURL + "/file/status", { params });
+    const response = await axios.get(baseURL, { params });
 
-//     return response;
-// };
-
-// export const reconAPI = async (filename1, filename2) => {
-
-//     const formData = new FormData();
-
-//     formData.append("source", filename1);
-//     formData.append("target", filename2);
-
-//     const response = await axios.post(reconAPIBaseURL + "/reconcile", formData);
-
-//     return response;
-// };
-
-// export const checkReconStatusAPI = async (filename1, filename2) => {
-
-//     const params = new URLSearchParams([['source', filename1], ['target', filename2]]);
-
-//     const response = await axios.get(reconAPIBaseURL + "/reconcile/results", { params });
-
-//     return response;
-// };
+    return response;
+};

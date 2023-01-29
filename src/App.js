@@ -3,16 +3,10 @@ import * as React from 'react';
 import './App.css';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
 import CurrencyConvert from './components/CurrencyConvert';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -53,7 +47,7 @@ function App() {
         <div className="Currency-convert">
           <CurrencyConvert />
         </div>
-        
+
       </Box>
     </ThemeProvider>
   );
